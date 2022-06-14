@@ -1,0 +1,28 @@
+[package]
+name = 'slur'
+version = '0.1.0'
+authors = ['LoganDark']
+edition = '2021'
+description = 'A fast, iterative, correct approach to Stackblur, resulting in a very smooth and high-quality output, with no edge bleeding'
+readme = 'README.md'
+repository = 'https://github.com/bend-n/slur'
+license = 'MIT'
+keywords = ['stackblur', 'blur', 'gaussian']
+categories = ['algorithms', 'graphics', 'rendering']
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+imgref = '^1.9.2'
+imgref-iter = { version = '~0.4.0', features = ["simd"] }
+
+[dev-dependencies]
+iai = { git = "https://github.com/bend-n/iai" }
+
+[[bench]]
+name = 'iai'
+harness = false
+
+[[bench]]
+name = 'iai_simd'
+harness = false
